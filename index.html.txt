@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC Center - डिजिटल सेवा केंद्र</title>
+    <!-- फॉन्ट आणि आयकॉन्स -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- सर्वसाधारण स्टाइल --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- हेडर (Header) --- */
+        header {
+            background: #fff;
+            padding: 20px;
+            border-bottom: 3px solid #d4af37; /* गोल्डन बॉर्डर */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .top-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 15px auto;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .csc-logo { display: flex; align-items: center; font-weight: bold; }
+        .csc-logo i { font-size: 3rem; color: #1a2b4c; margin-right: 10px; }
+        .csc-logo span { font-size: 1.2rem; color: #1a2b4c; }
+        .legal-safe {
+            background: #2d6a4f;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #b91c1c; /* गडद लाल */
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        header h2 { font-size: 1.1rem; color: #2d6a4f; font-weight: 600; }
+        .tagline {
+            display: inline-block;
+            background: #d4af37; /* गोल्डन टॅगलाइन */
+            color: #1a2b4c;
+            padding: 8px 25px;
+            border-radius: 25px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* --- कंटेनर --- */
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
+
+        /* --- सेवा ग्रिड (Services Grid) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .service-card img, .service-card i {
+            height: 60px; /* आयकॉन्स आणि इमेजची उंची */
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        .service-card i { font-size: 3rem; color: #d4af37; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1a2b4c; }
+        .service-card p { font-size: 0.95rem; color: #666; }
+
+        /* --- वैशिष्ट्ये आणि विश्वास बॉक्स (Features & Trust) --- */
+        .features-trust-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .features-list {
+            flex: 2;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .features-list ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        .features-list ul li:last-child { border-bottom: none; }
+        .features-list ul li i { color: #2d6a4f; margin-right: 15px; }
+        .trust-box {
+            flex: 1;
+            background: #1a2b4c;
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .trust-box h3 { font-size: 1.4rem; margin-bottom: 15px; }
+        .trust-box i { font-size: 4rem; color: #d4af37; }
+
+        /* --- पादलेख (Footer) --- */
+        footer {
+            background: #fff;
+            padding: 40px 20px;
+            border-top: 5px solid #2d6a4f;
+            margin-top: 50px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-contact { display: flex; align-items: center; gap: 15px; }
+        .footer-contact i { font-size: 2.5rem; color: #2d6a4f; }
+        .contact-details h4 { font-size: 1.1rem; color: #666; }
+        .contact-details a { font-size: 1.6rem; font-weight: bold; color: #2d6a4f; }
+        .guarantee-box {
+            background: #f5f5f5;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border-left: 5px solid #1a2b4c;
+            text-align: center;
+        }
+        .guarantee-box h4 { color: #1a2b4c; font-size: 1.1rem; }
+        .footer-bottom-tagline {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-weight: bold;
+            color: #1a2b4c;
+            font-size: 1.1rem;
+        }
+
+        /* --- रिस्पॉन्सिव्ह स्टाइल (Media Queries) --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .top-info { justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .features-trust-row { flex-direction: column; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-contact { flex-direction: column; gap: 10px;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- हेडर -->
+<header>
+    <div class="top-info">
+        <div class="csc-logo">
+            <i class="fas fa-desktop"></i>
+            <span>सीएससी सेंटर</span>
+        </div>
+        <div class="legal-safe">
+            <i class="fas fa-shield-alt"></i> LEGAL & SAFE
+        </div>
+    </div>
+    <h2>तुमची सर्व कामे... एकाच ठिकाणी!</h2>
+    <h1>आमच्या सर्व सेवा</h1>
+    <div class="tagline">विश्वसनीय सेवा, वेळेत काम, योग्य मार्गदर्शन!</div>
+</header>
+
+<div class="container">
+
+    <!-- सेवा ग्रिड -->
+    <section class="services-grid">
+
+        <!-- १. पॅन कार्ड -->
+        <div class="service-card">
+            <img src="https://www.uidai.gov.in/images/Aadhaar_PVC_card_inside_images_eng.png" alt="पॅन कार्ड उदाहरण">
+            <h3>पॅन कार्ड</h3>
+            <p>नवीन पॅन कार्ड काढून मिळेल.</p>
+        </div>
+
+        <!-- २. पासपोर्ट -->
+        <div class="service-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Indian_Passport_Cover.svg/800px-Indian_Passport_Cover.svg.png" alt="पासपोर्ट उदाहरण">
+            <h3>पासपोर्ट</h3>
+            <p>नवीन पासपोर्ट अर्ज व नुतनीकरण.</p>
+        </div>
+
+        <!-- ३. शॉप ॲक्ट -->
+        <div class="service-card">
+            <i class="fas fa-store"></i>
+            <h3>शॉप ॲक्ट</h3>
+            <p>दुकान नोंदणी, शॉप ॲक्ट काढून मिळेल.</p>
+        </div>
+
+        <!-- ४. गॅझेट -->
+        <div class="service-card">
+            <i class="fas fa-file-contract"></i>
+            <h3>गॅझेट</h3>
+            <p>नाव बदल, जन्मतारीख बदल, इतर गॅझेट कामे.</p>
+        </div>
+
+        <!-- ५. उद्यम आधार -->
+        <div class="service-card">
+            <i class="fas fa-industry"></i>
+            <h3>उद्यम आधार</h3>
+            <p>नवीन उद्यम नोंदणी (MSME) करून मिळेल.</p>
+        </div>
+
+        <!-- ६. फूड लायसन्स (FSSAI) -->
+        <div class="service-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/FSSAI_logo_svg.svg/2560px-FSSAI_logo_svg.svg.png" alt="FSSAI लोगो" style="height: 50px;">
+            <h3>फूड लायसन्स</h3>
+            <p>हॉटेल, रेस्टॉरंट, कॅटरिंग, बेकरी यांसाठी.</p>
+        </div>
+
+        <!-- ७. रेंट ॲग्रीमेंट -->
+        <div class="service-card">
+            <i class="fas fa-file-signature"></i>
+            <h3>रजिस्टर्ड Rent Agreement</h3>
+            <p>ऑनलाइन नोंदणीकृत भाडे करारनामा.</p>
+        </div>
+
+        <!-- ८. महसूल सेवा (महा भूमी) -->
+        <div class="service-card">
+            <i class="fas fa-landmark"></i>
+            <h3>महसूल सेवा (महा भूमी)</h3>
+            <p>7/12 उतारा, फेरफार, नकाशा, जमाबंदी.</p>
+        </div>
+
+    </section>
+
+    <!-- वैशिष्ट्ये आणि विश्वास बॉक्स -->
+    <section class="features-trust-row">
+        <div class="features-list">
+            <ul>
+                <li><i class="fas fa-check-circle"></i> जलद व विश्वासनीय सेवा</li>
+                <li><i class="fas fa-check-circle"></i> तज्ज्ञ मार्गदर्शन</li>
+                <li><i class="fas fa-check-circle"></i> ऑनलाइन प्रक्रिया</li>
+                <li><i class="fas fa-check-circle"></i> योग्य शुल्कात उत्कृष्ट सेवा</li>
+            </ul>
+        </div>
+        <div class="trust-box">
+            <h3>तुमच्या प्रत्येक कामासाठी आम्ही नेहमीच तुमच्या सोबत!</h3>
+            <i class="fas fa-handshake"></i>
+        </div>
+    </section>
+
+</div>
+
+<!-- पादलेख / संपर्क -->
+<footer>
+    <div class="footer-content">
+        <!-- संपर्क नंबर -->
+        <div class="footer-contact">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-details">
+                <h4>संपर्क करा</h4>
+                <a href="tel:9823889924">9823889924</a>
+            </div>
+        </div>
+
+        <!-- पत्ता -->
+        <div class="footer-contact">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-details">
+                <h4>पत्ता</h4>
+                <a href="https://goo.gl/maps/YOUR_GOOGLE_MAPS_LINK" target="_blank">
+                    सीएससी सेंटर, गणनगीरी कॉलनी,<br>
+                    आघोष गार्डन समोर, कोथरूड, पुणे - 411038.
+                </a>
+            </div>
+        </div>
+
+        <!-- गॅरंटी बॉक्स -->
+        <div class="guarantee-box">
+            <i class="fas fa-shield-check"></i>
+            <h4>तुमचा विश्वास...<br>आमची जबाबदारी!</h4>
+        </div>
+    </div>
+
+    <!-- खालची टॅगलाइन -->
+    <div class="footer-bottom-tagline">
+        सरकारी व खाजगी सर्व प्रकारची कामे एकाच ठिकाणी – वेळेत, योग्य आणि विश्वासाने!
+    </div>
+</footer>
+
+</body>
+</html>
+
