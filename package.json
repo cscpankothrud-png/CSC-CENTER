@@ -1,0 +1,17 @@
+{
+  "name": "digital-product-store",
+  "version": "1.0.0",
+  "description": "Fully automated digital product (ebook/PDF) store with Stripe Checkout and instant email delivery.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "stripe": "^16.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
