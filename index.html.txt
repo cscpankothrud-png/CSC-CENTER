@@ -112,4 +112,5 @@
 
 </body>
 </html>
-   
+docker build -f path/to/Dockerfile .
+
