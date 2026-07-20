@@ -1,0 +1,338 @@
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    background:#f5f8fc;
+    color:#183153;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    width:100%;
+    height:90px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.gov-logo{
+
+    font-size:42px;
+
+    margin-right:15px;
+
+}
+
+.logo-text h1{
+
+    font-size:54px;
+
+    color:#0b3d91;
+
+    line-height:1;
+
+}
+
+.logo-text span{
+
+    color:#444;
+
+    font-size:18px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:#163b75;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#138808;
+
+}
+
+.call-btn{
+
+    background:#0b3d91;
+
+    color:#fff;
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.call-btn:hover{
+
+    background:#082c6b;
+
+}
+
+/* ==========================
+ HERO
+========================== */
+
+.hero{
+
+    width:100%;
+
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:70px;
+
+    background:linear-gradient(180deg,#ffffff,#eef5ff);
+
+}
+
+.hero-left{
+
+    width:48%;
+
+}
+
+.hero-left h2{
+
+    font-size:82px;
+
+    line-height:1.1;
+
+    color:#0b3d91;
+
+}
+
+.hero-left span{
+
+    color:#138808;
+
+}
+
+.hero-left p{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+    color:#444;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+.primary-btn{
+
+    background:#0b3d91;
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.whatsapp-btn{
+
+    background:#25D366;
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.hero-features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:45px;
+
+}
+
+.hero-features div{
+
+    background:white;
+
+    width:260px;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.hero-features i{
+
+    color:#138808;
+
+    margin-right:12px;
+
+}
+
+.hero-right{
+
+    width:46%;
+
+    text-align:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:620px;
+
+    filter:drop-shadow(0 30px 45px rgba(0,0,0,.18));
+
+}
+
+/* ==========================
+ MOBILE
+========================== */
+
+@media(max-width:992px){
+
+.header{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+margin:20px 0;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+padding:40px 20px;
+
+text-align:center;
+
+}
+
+.hero-left,.hero-right{
+
+width:100%;
+
+}
+
+.hero-left h2{
+
+font-size:52px;
+
+}
+
+.hero-left p{
+
+font-size:22px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.hero-features{
+
+align-items:center;
+
+}
+
+}

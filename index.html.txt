@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSC Digital Seva Kendra | Kothrud Pune</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<div class="gov-logo">
+🇮🇳
+</div>
+
+<div class="logo-text">
+
+<h1>CSC</h1>
+
+<span>Digital Seva Kendra</span>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+<a href="#">
+<i class="fa fa-house"></i>
+मुख्यपृष्ठ
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fa fa-briefcase"></i>
+आमच्या सेवा
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fa fa-star"></i>
+वैशिष्ट्ये
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fa fa-phone"></i>
+संपर्क
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a href="tel:9823889924" class="call-btn">
+
+<i class="fa fa-phone"></i>
+
+9823889924
+
+</a>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h2>
+
+आमच्या
+
+<span>
+
+सर्व सेवा
+
+</span>
+
+</h2>
+
+<p>
+
+विश्वसनीय सेवा,
+
+वेळेत काम,
+
+योग्य मार्गदर्शन.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary-btn">
+
+आमच्या सेवा
+
+</a>
+
+<a href="https://wa.me/919823889924"
+
+class="whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+</div>
+
+<div class="hero-features">
+
+<div>
+
+<i class="fa fa-clock"></i>
+
+वेळेत काम
+
+</div>
+
+<div>
+
+<i class="fa fa-shield"></i>
+
+विश्वसनीय सेवा
+
+</div>
+
+<div>
+
+<i class="fa fa-user-check"></i>
+
+तज्ज्ञ मार्गदर्शन
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero.png"
+
+alt="CSC Hero">
+
+</div>
+
+</section>
+
+<!-- पुढे Service Section येथे येईल -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
