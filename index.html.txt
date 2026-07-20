@@ -1,116 +1,692 @@
+
+
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSC Center Kothrud Pune</title>
-  <style>
-    body {
-      font-family: 'Noto Sans Devanagari', sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #ff9933, #ffffff, #138808);
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2em;
-      margin: 5px 0;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-    }
-    .service-box {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 200px;
-      margin: 10px;
-      padding: 10px;
-      text-align: center;
-      background-color: #f9f9f9;
-    }
-    .features {
-      background-color: #e6ffe6;
-      padding: 20px;
-      text-align: center;
-    }
-    .contact {
-      background-color: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    .social-icons img {
-      width: 24px;
-      margin: 0 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>तुमचे CSC Centre - डिजिटल सेवा तुमच्या दारी</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== रीसेट आणि बेसिक ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        /* ===== हेडर ===== */
+        header {
+            background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 4px solid #ff6b35;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo h1 span {
+            color: #ff6b35;
+        }
+
+        .logo p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6b35;
+        }
+
+        nav ul li a i {
+            margin-right: 8px;
+        }
+
+        .nav-cta {
+            background: #ff6b35;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #e05525;
+            color: #fff;
+        }
+
+        /* ===== हिरो सेक्शन ===== */
+        #hero {
+            background: linear-gradient(135deg, #003366 0%, #002244 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+        }
+
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        #hero h1 span {
+            color: #ff6b35;
+        }
+
+        #hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid #ff6b35;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #ff6b35;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #003366;
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats .stat {
+            text-align: center;
+        }
+
+        .hero-stats .stat h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        .hero-stats .stat p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* ===== सेवा विभाग ===== */
+        #services {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #003366;
+            font-weight: 700;
+        }
+
+        .section-title h2 span {
+            color: #ff6b35;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: #ff6b35;
+        }
+
+        .service-card i {
+            font-size: 48px;
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* ===== टेस्टिमोनियल्स ===== */
+        #testimonials {
+            padding: 80px 0;
+            background: #f0f2f5;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card i {
+            color: #ff6b35;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: 16px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-card .user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .testimonial-card .user i {
+            font-size: 40px;
+            color: #003366;
+            margin: 0;
+        }
+
+        .testimonial-card .user h4 {
+            font-size: 16px;
+            color: #003366;
+        }
+
+        .testimonial-card .user p {
+            font-size: 14px;
+            color: #888;
+            font-style: normal;
+        }
+
+        /* ===== CTA (कॉल टू अॅक्शन) ===== */
+        #cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        #cta h2 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        #cta h2 span {
+            color: #ff6b35;
+        }
+
+        #cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 15px auto 30px;
+            opacity: 0.9;
+        }
+
+        /* ===== संपर्क / फुटर ===== */
+        #contact {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            color: #003366;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            color: #ff6b35;
+            width: 25px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: #ff6b35;
+            color: #fff;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #e05525;
+        }
+
+        footer {
+            background: #001a33;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* ===== मोबाइलसाठी रिस्पॉन्सिव्ह ===== */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            #hero h1 {
+                font-size: 30px;
+            }
+
+            #hero p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .hero-stats .stat h3 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            #cta h2 {
+                font-size: 28px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #hero h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>आमच्या सर्व सेवा</h1>
-  <p>विश्वसनीय सेवा, वेळेत काम, योग्य मार्गदर्शन!</p>
-  <h2>CSC Center, कोथरूड, पुणे</h2>
-</header>
+    <!-- ===== हेडर ===== -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>तुमचे <span>CSC</span> Centre</h1>
+                <p>डिजिटल सेवा तुमच्या दारी</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services"><i class="fas fa-cogs"></i>सेवा</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-star"></i>प्रतिसाद</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i>संपर्क</a></li>
+                    <li><a href="#cta" class="nav-cta"><i class="fas fa-rocket"></i>आजच सुरू करा</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="services">
-  <div class="service-box">पॅन कार्ड (PAN Card)</div>
-  <div class="service-box">पासपोर्ट (Passport)</div>
-  <div class="service-box">शॉप ऑर्डर (Shop Order)</div>
-  <div class="service-box">गॅझेट (Gazette)</div>
-  <div class="service-box">उद्योग आधार (Udyam Aadhaar)</div>
-  <div class="service-box">फूड लायसन्स (Food License)</div>
-  <div class="service-box">रेंट एग्रीमेंट (Rent Agreement)</div>
-  <div class="service-box">महसूल सेवा (Revenue Services)</div>
-  <div class="service-box">आधार सेवा (Aadhaar Services)</div>
-  <div class="service-box">मतदार सेवा (Voter Services)</div>
-  <div class="service-box">PM किसान (PM Kisan)</div>
-  <div class="service-box">Income Tax Return</div>
-  <div class="service-box">GST नोंदणी (GST Registration)</div>
-  <div class="service-box">ड्रायव्हिंग लायसन्स (Driving License)</div>
-  <div class="service-box">प्रमाणपत्र सेवा (Certificate Services)</div>
-</section>
+    <!-- ===== हिरो सेक्शन ===== -->
+    <section id="hero">
+        <div class="container">
+            <h1>तुमच्या <span>सरकारी सेवा</span> आता <br>ऑनलाइन एकाच ठिकाणी</h1>
+            <p>आधार, पॅन कार्ड, बँकिंग, विमा, कौशल्य विकास आणि ५०+ डिजिटल सेवा. आजच नोंदणी करा आणि लाभ घ्या.</p>
+            <div class="hero-buttons">
+                <a href="#cta" class="btn-primary"><i class="fas fa-arrow-right"></i> आजच संपर्क करा</a>
+                <a href="#services" class="btn-secondary"><i class="fas fa-info-circle"></i> सेवा पाहा</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>२,५००+</h3>
+                    <p>समाधानी ग्राहक</p>
+                </div>
+                <div class="stat">
+                    <h3>५०+</h3>
+                    <p>डिजिटल सेवा</p>
+                </div>
+                <div class="stat">
+                    <h3>९८%</h3>
+                    <p>ग्राहक समाधान</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="features">
-  <h3>आमची वैशिष्ट्ये</h3>
-  <p>✅ जलद व विश्वसनीय सेवा</p>
-  <p>✅ ऑनलाइन प्रक्रिया</p>
-  <p>✅ ग्राहक संतोष</p>
-</section>
+    <!-- ===== सेवा विभाग ===== -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>आमच्या <span>प्रमुख सेवा</span></h2>
+                <p>सरकारी, आर्थिक आणि डिजिटल सेवांची संपूर्ण श्रेणी एकाच छताखाली</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>आधार सेवा</h3>
+                    <p>नवीन नोंदणी, नाव/पत्ता/फोटो अपडेट, e-KYC.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>पॅन कार्ड</h3>
+                    <p>नवीन पॅन अर्ज, अपडेट, e-PAN डाउनलोड.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-university"></i>
+                    <h3>बँकिंग सेवा</h3>
+                    <p>खाते उघडणे, किसान क्रेडिट कार्ड, विमा, पेन्शन.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>कौशल्य विकास</h3>
+                    <p>ऑनलाइन कोर्सेस, डिजिटल साक्षरता, प्रमाणपत्रे.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-train"></i>
+                    <h3>IRCTC तिकीट</h3>
+                    <p>रेल्वे तिकीट बुकिंग, कॅन्सलेशन, पीएनआर स्टेटस.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-notes-medical"></i>
+                    <h3>आरोग्य सेवा</h3>
+                    <p>टेली-कन्सल्टेशन, आरोग्य योजना, औषधी माहिती.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="contact">
-  <p>📞 संपर्क: 9823889924 | WhatsApp उपलब्ध</p>
-  <p>🏢 पत्ता: सीएससी सेंटर, कोथरूड, पुणे - 411038</p>
-</section>
+    <!-- ===== टेस्टिमोनियल्स ===== -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>ग्राहकांचे <span>प्रतिसाद</span></h2>
+                <p>आमच्या सेवांचा लाभ घेतलेल्या हजारो ग्राहकांची मने</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“आधार अपडेट अतिशय सोप्या पद्धतीने करून दिले. वेळेत आणि अचूक काम.”</p>
+                    <div class="user">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>सुरेश पाटील</h4>
+                            <p>शेतकरी, सातारा</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“पॅन कार्ड आणि बँक खाते एकाच दिवसात उघडून दिले. खूप उपयुक्त सेवा.”</p>
+                    <div class="user">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>प्रिया शिंदे</h4>
+                            <p>गृहिणी, पुणे</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“ऑनलाइन कोर्सेस मुळे माझ्या मुलाला नवीन कौशल्ये शिकता आली. धन्यवाद!”</p>
+                    <div class="user">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>राजेश मोरे</h4>
+                            <p>व्यवसायिक, नाशिक</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2024 CSC Center. सर्व हक्क राखीव.</p>
-  <div class="social-icons">
-    <img src="facebook_icon.png" alt="Facebook">
-    <img src="instagram_icon.png" alt="Instagram">
-    <img src="twitter_icon.png" alt="Twitter">
-    <img src="youtube_icon.png" alt="YouTube">
-  </div>
-</footer>
+    <!-- ===== कॉल टू अॅक्शन (CTA) ===== -->
+    <section id="cta">
+        <div class="container">
+            <h2>आजच <span>संपर्क</span> करा आणि <br>सेवेचा लाभ घ्या</h2>
+            <p>तुमच्या CSC Centre मार्फत ५०+ डिजिटल सेवा मिळवा. आमची टीम तुमची मदत करण्यासाठी सज्ज आहे.</p>
+            <a href="#contact" class="btn-primary" style="display:inline-flex;"><i class="fas fa-phone"></i> आता संपर्क करा</a>
+            <p style="margin-top:20px; font-size:14px; opacity:0.6;">📞 ९८७६५४३२१० | 📧 info@yourcsccentre.com</p>
+        </div>
+    </section>
+
+    <!-- ===== संपर्क ===== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>आमच्याशी <span>संपर्क</span> साधा</h2>
+                <p>तुमच्या प्रश्नांसाठी किंवा सेवा बुकिंगसाठी खालील फॉर्म भरा</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>संपर्क तपशील</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> तुमचे CSC Centre, गाव/शहर, जिल्हा, राज्य</p>
+                    <p><i class="fas fa-phone"></i> +९१ ९८७६५४३२१०</p>
+                    <p><i class="fas fa-envelope"></i> info@yourcsccentre.com</p>
+                    <p><i class="fas fa-clock"></i> सोम-शनि: सकाळी ९ ते संध्याकाळी ६</p>
+                    <br>
+                    <h3>आम्ही कोण आहोत?</h3>
+                    <p>आम्ही एक प्रमाणित CSC Centre आहोत, जे ग्रामीण आणि शहरी भागातील नागरिकांना डिजिटल सेवा पुरवतो. आमचे ध्येय 'डिजिटल इंडिया'च्या दिशेने योगदान देणे आहे.</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="तुमचे पूर्ण नाव" required>
+                        <input type="email" placeholder="ईमेल पत्ता" required>
+                        <input type="tel" placeholder="मोबाइल नंबर" required>
+                        <input type="text" placeholder="सेवा निवडा (उदा. आधार अपडेट)">
+                        <textarea placeholder="तुमचा संदेश..." required></textarea>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> संदेश पाठवा</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== फुटर ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; २०२४ तुमचे CSC Centre. सर्व हक्क राखीव.</p>
+            <p style="margin-top:5px; font-size:12px; opacity:0.5;">CSC Centre ची अधिकृत वेबसाइट | डिजिटल इंडिया अभियानाचा भाग</p>
+        </div>
+    </footer>
 
 </body>
 </html>
-docker build -f path/to/Dockerfile .
-
